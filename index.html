@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weatherology</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -11,6 +10,8 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Weatherology</title>
   </head>
   <body>
     <div class="app-container">
@@ -28,20 +29,33 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1>London</h1>
-            <h3>UNITED KINGDOM</h3>
+            <h1 class="current-city">London</h1>
+            <h3 class="current-country">UNITED KINGDOM</h3>
             <p class="current-details">
-              H:<strong>4</strong> L:<strong>-5</strong>
+              <span id="current-time">Saturday 21:40</span>
+              <span id="condition">Cloudy</span>
               <br />
-              <span id="current-time">Saturday 21:40</span> Cloudy
-              <br />
-              Humidity: <strong>62%</strong>, Wind:<strong> 22km/h</strong>
+              <span id="temperature-details">
+                Humidity <strong id="humidity">62%</strong>, Wind:<strong
+                  id="wind"
+                >
+                  22km/h</strong
+                ></span
+              >
             </p>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon">🌤️</span>
-            <span class="current-temperature-value">4</span>
-            <span class="current-temperature-unit">°C</span>
+            <span class="current-temperature-icon" id="current-temperature-icon"
+              >🌤️</span
+            >
+            <span
+              class="current-temperature-value"
+              id="current-temperature-value"
+              >4</span
+            >
+            <span class="current-temperature-unit" id="current-temperature-unit"
+              >°C</span
+            >
           </div>
         </div>
       </main>

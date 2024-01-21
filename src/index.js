@@ -5,13 +5,13 @@ function displayDate() {
   let hours = now.getHours();
   let minutes = now.getMinutes().toString().padStart(2, "0");
   let days = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
 
   let day = days[now.getDay()];

@@ -1,12 +1,13 @@
 body {
   background-color: #f5f5f5;
+  font-family: "Noto Sans", sans-serif;
 }
 .app-container {
-  max-width: 700px;
+  max-width: 650px;
   background: white;
   display: block;
   margin: 70px auto;
-  padding: 20px;
+  padding: 30px;
   border-radius: 20px;
 }
 
@@ -14,7 +15,7 @@ body {
   width: 75%;
   padding: 15px;
   margin: 20px 0 0 15px;
-  background: #f1e8c7;
+  background: #f1e8c7b2;
   border: none;
   border-radius: 6px;
   font-size: 20px;
@@ -29,4 +30,60 @@ body {
   border: none;
   line-height: 1;
   border-radius: 6px;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 52px;
+  margin: 60px 0 0 20px;
+}
+h3 {
+  margin: 0 0 40px 22px;
+  font-size: 18px;
+}
+
+.current-details {
+  color: #958d8d;
+  margin-left: 22px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+strong {
+  color: #6242bd;
+}
+
+.current-temperature {
+  margin-top: 50px;
+}
+.current-temperature-icon {
+  position: relative;
+  font-size: 50px;
+  top: -25px;
+}
+
+.current-temperature-value {
+  font-size: 110px;
+  font-weight: bold;
+}
+
+.current-temperature-unit {
+  font-size: 40px;
+  position: relative;
+  top: -50px;
+  left: -10px;
+}
+
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #958d8d;
+  margin-top: 30px;
+}
+a {
+  color: #c19702;
 }

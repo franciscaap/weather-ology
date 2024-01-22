@@ -13,6 +13,7 @@ function searchWeather(event) {
     let country = document.querySelector("#country");
     let date = new Date(response.data.time * 1000);
     let time = document.querySelector("#time");
+    let icon = document.querySelector("#icon");
 
     currentCity.innerHTML = response.data.city;
     temperature.innerHTML = Math.round(response.data.temperature.current);
@@ -21,6 +22,10 @@ function searchWeather(event) {
     wind.innerHTML = `${response.data.wind.speed}km/h`;
     country.innerHTML = response.data.country;
     time.innerHTML = displayDate(date);
+    icon.innerHTML = `
+      <img
+        src= "${response.data.condition.icon_url}" class="current-temperature-icon"
+      />`;
   }
 
   function displayDate(date) {

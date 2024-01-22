@@ -1,25 +1,3 @@
-function displayDate() {
-  let currentDate = document.querySelector("#current-time");
-  let now = new Date();
-  let hours = now.getHours();
-  let minutes = now.getMinutes().toString().padStart(2, "0");
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-
-  let day = days[now.getDay()];
-
-  currentDate.innerHTML = `${day} ${hours}:${minutes}`;
-}
-
-displayDate();
-
 function searchWeather(event) {
   event.preventDefault();
   let searchCity = document.querySelector(".form-search-input");
@@ -27,28 +5,45 @@ function searchWeather(event) {
   city.innerHTML = searchCity.value;
 
   function displayWeather(response) {
-    console.log(response);
-    let currentCity = response.data.city;
-    let currentTemperature = Math.round(response.data.temperature.current);
-    let currentCondition = response.data.condition.description;
-    let currentHumidity = response.data.temperature.humidity;
-    let currentWind = response.data.wind.speed;
-    let currentCountry = response.data.country;
-    let city = document.querySelector(".current-city");
-    city.innerHTML = currentCity;
-    let country = document.querySelector(".current-country");
-    country.innerHTML = currentCountry;
+    let currentCity = city;
     let temperature = document.querySelector("#current-temperature-value");
-    temperature.innerHTML = currentTemperature;
-    let condition = document.querySelector("#condition");
-    condition.innerHTML = currentCondition;
+    let description = document.querySelector("#description");
     let humidity = document.querySelector("#humidity");
-    humidity = currentHumidity;
     let wind = document.querySelector("#wind");
-    wind = currentWind;
-    let conditionSentence = document.querySelector("#temperature-details");
-    conditionSentence.innerHTML = `Humidity ${humidity}%, Wind: ${wind}km/h`;
+    let country = document.querySelector("#country");
+    let date = new Date(response.data.time * 1000);
+    let time = document.querySelector("#time");
+
+    currentCity.innerHTML = response.data.city;
+    temperature.innerHTML = Math.round(response.data.temperature.current);
+    description.innerHTML = response.data.condition.description;
+    humidity.innerHTML = `${response.data.temperature.humidity}%`;
+    wind.innerHTML = `${response.data.wind.speed}km/h`;
+    country.innerHTML = response.data.country;
+    time.innerHTML = displayDate(date);
   }
+
+  function displayDate(date) {
+    let hours = date.getHours();
+    let minutes = date.getMinutes().toString().padStart(2, "0");
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    let day = days[date.getDay()];
+
+    if (hours < 10) {
+      hours = `0${hours}`;
+    }
+    return `${day} ${hours}:${minutes}`;
+  }
+
   let apiKey = "9b00a0b2o792ct546c043d35bf49a6e3";
   let displayCity = city.innerHTML;
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${displayCity}&key=${apiKey}&units=metric`;

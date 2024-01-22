@@ -30,10 +30,10 @@
         <div class="current-weather">
           <div>
             <h1 class="current-city">London</h1>
-            <h3 class="current-country">UNITED KINGDOM</h3>
+            <h3 id="country">United Kingdom</h3>
             <p class="current-details">
-              <span id="current-time">Saturday 21:40</span>
-              <span id="condition">Cloudy</span>
+              <span class="current-time" id="time">Saturday 21:40</span>
+              <span id="description">Cloudy</span>
               <br />
               <span id="temperature-details">
                 Humidity <strong id="humidity">62%</strong>, Wind:<strong
@@ -45,17 +45,23 @@
             </p>
           </div>
           <div class="current-temperature">
-            <span class="current-temperature-icon" id="current-temperature-icon"
-              >🌤️</span
-            >
-            <span
+            <div>
+              <div id="icon">
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+                  class="current-temperature-icon"
+                />
+              </div>
+            </div>
+            <div
               class="current-temperature-value"
               id="current-temperature-value"
-              >4</span
             >
-            <span class="current-temperature-unit" id="current-temperature-unit"
-              >°C</span
-            >
+              4
+            </div>
+            <div class="current-temperature-unit" id="current-temperature-unit">
+              °C
+            </div>
           </div>
         </div>
       </main>

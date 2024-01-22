@@ -53,29 +53,27 @@ h3 {
   line-height: 24px;
 }
 
-strong {
+#temperature-details strong {
   color: #6242bd;
 }
 
 .current-temperature {
-  margin-top: 50px;
+  display: flex;
+  margin-top: 60px;
 }
-.current-temperature-icon {
+#current-temperature-icon {
   position: relative;
   font-size: 50px;
-  top: -25px;
 }
 
 .current-temperature-value {
   font-size: 110px;
   font-weight: bold;
+  margin-top: -25px;
 }
 
 .current-temperature-unit {
-  font-size: 40px;
-  position: relative;
-  top: -50px;
-  left: -10px;
+  font-size: 38px;
 }
 
 footer {

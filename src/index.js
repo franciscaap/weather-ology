@@ -54,5 +54,30 @@ function searchWeather(event) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${displayCity}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
+
+function displayForecast() {
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast-date">
+            <div class="weather-forecast-day">${day}</div>
+            <img
+              src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/few-clouds-day.png"
+              class="weather-forecast-icon"
+            />
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperatures-max">10° </span>
+              <span class="weather-forecast-temperatures-min"> 5°</span>
+            </div>
+          </div>`;
+  });
+  let forecast = document.querySelector(".weather-forecast");
+  forecast.innerHTML = forecastHtml;
+}
 let form = document.querySelector("form");
 form.addEventListener("submit", searchWeather);
+
+displayForecast();

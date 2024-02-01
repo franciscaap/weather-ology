@@ -15,7 +15,7 @@ body {
   width: 75%;
   padding: 15px;
   margin: 20px 0 0 15px;
-  background: #f1e8c7b2;
+  background: #d9d9d9;
   border: none;
   border-radius: 6px;
   font-size: 20px;
@@ -23,10 +23,10 @@ body {
 
 .form-search-button {
   padding: 15px 25px;
-  background-color: #c19702;
+  background-color: #e4c624;
   margin-left: 25px;
   font-size: 20px;
-  color: #ffffff;
+  color: #000000;
   border: none;
   line-height: 1;
   border-radius: 6px;
@@ -59,7 +59,10 @@ h3 {
 
 .current-temperature {
   display: flex;
-  margin-top: 60px;
+  margin: 60px 20px;
+}
+#icon {
+  margin-top: 30px;
 }
 #current-temperature-icon {
   position: relative;
@@ -67,15 +70,56 @@ h3 {
 }
 
 .current-temperature-value {
-  font-size: 110px;
+  font-size: 130px;
   font-weight: bold;
-  margin-top: -25px;
 }
 
 .current-temperature-unit {
   font-size: 38px;
+  margin-top: 30px;
 }
 
+.weather-forecast {
+  display: flex;
+  justify-content: space-around;
+  max-width: 630px;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #d9d9d9;
+  margin-top: 30px;
+}
+
+.weather-forecast-day {
+  font-size: 20px;
+  text-align: center;
+  color: #000000;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.weather-forecast-icon {
+  display: block;
+  margin: 0 auto;
+  width: 88px;
+  height: 88px;
+}
+
+.weather-forecast-temperatures {
+  font-size: 18px;
+  color: #6242bd;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.weather-forecast-temperatures-max {
+  padding: 0 10px 0 0;
+  font-weight: bold;
+}
+.weather-forecast-temperatures-min {
+  opacity: 0.5;
+  padding: 0 0 0 10px;
+}
 footer {
   text-align: center;
   font-size: 14px;
@@ -83,5 +127,5 @@ footer {
   margin-top: 30px;
 }
 a {
-  color: #c19702;
+  color: #bca20f;
 }
